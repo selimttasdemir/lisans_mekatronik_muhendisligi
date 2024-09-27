@@ -1,0 +1,50 @@
+A51 MACRO ASSEMBLER  DENEME2                                                              11/18/2023 13:47:18 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+NO OBJECT MODULE REQUESTED
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE deneme2.a51 SET(SMALL) DEBUG PRINT(.\Listings\deneme2.lst) OBJECT(.\Obj
+                      ects\deneme2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     $mod51 
+                       2             
+----                   3     CSEG
+                       4                     
+0000                   5     ORG 0000H 
+                       6     ;PORT 0 DAN OKUNAN DEGERI PORT1 E ATAYAN PROGRAM
+                       7     
+0000 7580FF            8     MOV P0,#0FFH ;P0 PORTU GIRIS OLARAK TANIMLANIR
+                       9     
+0003                  10     READ:
+0003 A280             11             MOV C,P0.0
+0005                  12             JB C,LED
+*** ____________________________________^
+*** ERROR #A22 IN 12 (deneme2.a51, LINE 12): EXPRESSION TYPE DOES NOT MATCH INSTRUCTION
+0005 C2B5             13             CLR P3.5
+0007 80FA             14             JMP READ
+                      15             
+0009                  16     LED:
+0009 D2B5             17             SETB P3.5
+000B 80F6             18             JMP READ
+                      19     
+                      20     END
+A51 MACRO ASSEMBLER  DENEME2                                                              11/18/2023 13:47:18 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+LED. . . . . . . .  C ADDR   0009H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+READ . . . . . . .  C ADDR   0003H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 1 ERROR(S)

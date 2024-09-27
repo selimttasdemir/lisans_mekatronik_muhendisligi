@@ -1,0 +1,59 @@
+A51 MACRO ASSEMBLER  DENEME3                                                              11/18/2023 15:47:29 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\deneme3.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE deneme3.a51 SET(SMALL) DEBUG PRINT(.\Listings\deneme3.lst) OBJECT(.\Obj
+                      ects\deneme3.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     $mod51 
+                       2     
+----                   3     CSEG
+                       4     
+0000                   5     ORG 0000H
+                       6     ; PORT 0.0'dan okunan degeri PORT3.5'e atayan ve 
+                       7     ; butona tiklandiginda LED'i yakan program
+                       8     
+0000 7580FF            9     MOV P0, #0FFH ; P0 PORTU GIRIS OLARAK TANIMLANIR
+                      10     
+  00B5                11     LED EQU P3.5
+  0080                12     BUTTON EQU P0
+                      13     
+0003                  14     CONTROL:
+0003 E580             15         MOV A, BUTTON     ; P0 portundan degeri A register'ina oku
+                      16     
+                      17         ; A register'indaki degerle 00000001B (hex #01H) degerini AND islemine tabi tut.
+                      18         ; Bu islem, sadece P0.0 bitini korur ve diger bitleri sifirlar.
+0005 5401             19         ANL A, #01H
+                      20     
+0007 B40104           21         CJNE A, #01H, LED_CONTROL  ; Eger A 01H degilse, LED etiketine atla
+000A D2B5             22         SETB LED    ; Eger A 01H ise, P3.5'i yuksek (LED'i yak) yap
+000C 80F5             23         JMP CONTROL      ; CONTROL etiketine geri don
+                      24     
+000E                  25     LED_CONTROL:
+000E C2B5             26         CLR LED      ; P3.5'i dusuk (LED'i sondur) yap
+0010 80F1             27         JMP CONTROL      ; CONTROL etiketine geri don
+                      28     
+                      29     END
+A51 MACRO ASSEMBLER  DENEME3                                                              11/18/2023 15:47:29 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BUTTON . . . . . .  D ADDR   0080H   A   
+CONTROL. . . . . .  C ADDR   0003H   A   
+LED. . . . . . . .  B ADDR   00B0H.5 A   
+LED_CONTROL. . . .  C ADDR   000EH   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

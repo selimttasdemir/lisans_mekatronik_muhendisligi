@@ -1,0 +1,44 @@
+A51 MACRO ASSEMBLER  DENEME5                                                              11/22/2023 14:36:01 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\deneme5.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE deneme5.a51 SET(SMALL) DEBUG PRINT(.\Listings\deneme5.lst) OBJECT(.\Obj
+                      ects\deneme5.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     $mod51 
+                       2     
+----                   3     CSEG
+                       4     
+0000                   5     ORG 0000H
+                       6     
+0000 7590FF            7     MOV P1, #0FFH ;
+                       8     
+0003                   9     READ:
+0003 E590             10             MOV A,P1
+0005 6004             11             JZ DUR
+0007 F580             12             MOV P0,A
+0009 80F8             13             JMP READ
+                      14             
+000B 80FE             15     DUR:JMP $
+                      16     END
+A51 MACRO ASSEMBLER  DENEME5                                                              11/22/2023 14:36:01 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DUR. . . . . . . .  C ADDR   000BH   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+READ . . . . . . .  C ADDR   0003H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

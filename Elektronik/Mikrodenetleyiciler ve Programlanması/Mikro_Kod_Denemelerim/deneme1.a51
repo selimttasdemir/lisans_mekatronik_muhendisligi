@@ -1,0 +1,24 @@
+$MOD51
+	
+CSEG
+	
+ORG 100H
+	
+DUR:
+MOV A,#55H
+MOV P2,#0FH
+Call delay
+MOV P2,#0F0H
+Call Delay
+Jmp DUR
+
+Delay:
+		MOV R1,A
+DLY0:	MOV R2,#01BH
+DLY1:	MOV R3,#0FFH
+DJNZ	R3,$
+DJNZ	R2,DLY1
+DJNZ	R1,DLY0
+RET
+
+End

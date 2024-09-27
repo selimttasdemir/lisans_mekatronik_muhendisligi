@@ -1,0 +1,53 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    11/18/2023  15:47:29  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\deneme3.obj TO .\Objects\deneme3 PRINT (.\Listings\deneme3.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\deneme3.obj (DENEME3)
+
+
+LINK MAP OF MODULE:  .\Objects\deneme3 (DENEME3)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0012H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\deneme3 (DENEME3)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DENEME3
+  D:0080H         SYMBOL        BUTTON
+  C:0003H         SYMBOL        CONTROL
+  B:00B0H.5       SYMBOL        LED
+  C:000EH         SYMBOL        LED_CONTROL
+  D:0080H         SYMBOL        P0
+  D:00B0H         SYMBOL        P3
+  C:0000H         LINE#         9
+  C:0003H         LINE#         15
+  C:0005H         LINE#         19
+  C:0007H         LINE#         21
+  C:000AH         LINE#         22
+  C:000CH         LINE#         23
+  C:000EH         LINE#         26
+  C:0010H         LINE#         27
+  -------         ENDMOD        DENEME3
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0012H BYTE ( 0%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=18
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

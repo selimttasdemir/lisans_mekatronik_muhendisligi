@@ -1,0 +1,3 @@
+".\Objects\deneme4.obj" 
+TO ".\Objects\deneme4" 
+PRINT(".\Listings\deneme4.m51") RAMSIZE(256) 

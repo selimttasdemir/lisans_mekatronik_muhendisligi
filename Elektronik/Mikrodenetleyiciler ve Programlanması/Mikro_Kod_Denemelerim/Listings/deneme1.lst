@@ -1,0 +1,53 @@
+A51 MACRO ASSEMBLER  DENEME1                                                              11/18/2023 11:52:27 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\deneme1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE deneme1.a51 SET(SMALL) DEBUG PRINT(.\Listings\deneme1.lst) OBJECT(.\Obj
+                      ects\deneme1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     $mod51 
+                       2             
+----                   3     CSEG
+                       4             
+0100                   5     ORG 100H
+                       6             
+0100                   7     DUR:
+0100 7455              8     MOV A,#55H
+0102 75A00F            9     MOV P2,#0FH
+0105 310E             10     Call delay
+0107 75A0F0           11     MOV P2,#0F0H
+010A 310E             12     Call Delay
+010C 80F2             13     Jmp DUR
+                      14     
+010E                  15     Delay:
+010E F9               16                     MOV R1,A
+010F 7A1B             17     DLY0:   MOV R2,#01BH
+0111 7BFF             18     DLY1:   MOV R3,#0FFH
+0113 DBFE             19     DJNZ    R3,$
+0115 DAFA             20     DJNZ    R2,DLY1
+0117 D9F6             21     DJNZ    R1,DLY0
+0119 22               22     RET
+                      23     
+                      24     End
+A51 MACRO ASSEMBLER  DENEME1                                                              11/18/2023 11:52:27 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   010EH   A   
+DLY0 . . . . . . .  C ADDR   010FH   A   
+DLY1 . . . . . . .  C ADDR   0111H   A   
+DUR. . . . . . . .  C ADDR   0100H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

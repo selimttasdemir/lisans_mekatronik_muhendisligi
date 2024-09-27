@@ -1,0 +1,3 @@
+".\Objects\mikro_projesi_v2.obj" 
+TO ".\Objects\mikro_projesi_v2" 
+PRINT(".\Listings\mikro_projesi_v2.m51") RAMSIZE(256) 

@@ -1,0 +1,115 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    12/27/2023  00:10:07  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\mikro_projesi_v2.obj TO .\Objects\mikro_projesi_v2 PRINT (.\Listings\mikro_projesi
+>> _v2.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\mikro_projesi_v2.obj (MIKRO_PROJESI_V2)
+
+
+LINK MAP OF MODULE:  .\Objects\mikro_projesi_v2 (MIKRO_PROJESI_V2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     2065H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\mikro_projesi_v2 (MIKRO_PROJESI_V2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MIKRO_PROJESI_V2
+  D:00E0H         SYMBOL        ACC
+  C:1000H         SYMBOL        AD
+  C:2043H         SYMBOL        BUTON1
+  C:2050H         SYMBOL        BUTON2
+  C:2015H         SYMBOL        DEVAM
+  C:0000H         SYMBOL        GO
+  B:0080H.0       SYMBOL        ISIMAD
+  C:2011H         SYMBOL        KONTROL
+  C:2026H         SYMBOL        KONTROL22
+  C:2000H         SYMBOL        NUM
+  B:0080H.1       SYMBOL        NUMARANO
+  D:0080H         SYMBOL        P0
+  N:00D7H         SYMBOL        PLLCON
+  C:2039H         SYMBOL        PORT_READ
+  C:201DH         SYMBOL        SAYAC_1
+  C:2022H         SYMBOL        SAYAC_1_RESET
+  C:2030H         SYMBOL        SAYAC_2
+  C:2035H         SYMBOL        SAYAC_2_RESET
+  D:0099H         SYMBOL        SBUF
+  D:0098H         SYMBOL        SCON
+  C:205DH         SYMBOL        SERIALOKUMA
+  N:009EH         SYMBOL        T3CON
+  N:009DH         SYMBOL        T3FD
+  B:0098H.1       SYMBOL        TI
+  C:0000H         LINE#         13
+  C:0003H         LINE#         14
+  C:0006H         LINE#         20
+  C:0009H         LINE#         21
+  C:000CH         LINE#         22
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  12/27/2023  00:10:07  PAGE 2
+
+
+  C:2011H         LINE#         33
+  C:2013H         LINE#         34
+  C:2015H         LINE#         37
+  C:2017H         LINE#         38
+  C:201AH         LINE#         39
+  C:201DH         LINE#         42
+  C:2020H         LINE#         43
+  C:2022H         LINE#         46
+  C:2024H         LINE#         47
+  C:2026H         LINE#         50
+  C:2028H         LINE#         51
+  C:202BH         LINE#         52
+  C:202EH         LINE#         53
+  C:2030H         LINE#         56
+  C:2033H         LINE#         57
+  C:2035H         LINE#         60
+  C:2037H         LINE#         61
+  C:2039H         LINE#         64
+  C:203AH         LINE#         65
+  C:203CH         LINE#         66
+  C:203EH         LINE#         67
+  C:2040H         LINE#         68
+  C:2042H         LINE#         69
+  C:2043H         LINE#         72
+  C:2044H         LINE#         73
+  C:2047H         LINE#         75
+  C:2048H         LINE#         76
+  C:2049H         LINE#         77
+  C:204BH         LINE#         78
+  C:204DH         LINE#         79
+  C:204EH         LINE#         80
+  C:2050H         LINE#         83
+  C:2051H         LINE#         84
+  C:2054H         LINE#         86
+  C:2055H         LINE#         87
+  C:2056H         LINE#         88
+  C:2058H         LINE#         89
+  C:205AH         LINE#         90
+  C:205BH         LINE#         91
+  C:205DH         LINE#         94
+  C:205FH         LINE#         95
+  C:2061H         LINE#         96
+  C:2064H         LINE#         97
+  -------         ENDMOD        MIKRO_PROJESI_V2
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0085H BYTE ( 6%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=8293
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,58 @@
+A51 MACRO ASSEMBLER  DENEME4                                                              11/21/2023 17:20:39 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\deneme4.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE deneme4.a51 SET(SMALL) DEBUG PRINT(.\Listings\deneme4.lst) OBJECT(.\Obj
+                      ects\deneme4.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     $mod51 
+                       2     
+                       3     ; PORT 3.4'dan bagli LED'i 100 ms 'lik araliklarla yakip sonduren program
+                       4     ;MOV P0, #0FFH ; P0 PORTU GIRIS OLARAK TANIMLANIR
+                       5     
+  00B4                 6     LED EQU P3.4
+  00D7                 7     PLLCON EQU 0xD7 ;SFR adres tanimlamasi yapilmasi gerekmektedir  
+                       8     
+----                   9     CSEG
+0000                  10     ORG 0000H
+0000 75D700           11     MOV PLLCON,#00H ;Islemci freakansi 16.777 MHz olarak ayarlanir 2.097 E GÖRE DEGERLER AYARLI
+0003 74FA             12     MOV A,#0FAH
+0005                  13     BLINK:
+0005 B2B4             14             CPL LED ;Bitleri ters cevirir "0" i "1" , "1" i "0" yapar
+0007 110B             15             CALL DELAY
+0009 80FA             16             JMP BLINK
+                      17     
+000B                  18     DELAY:
+000B F9               19             MOV R1,A
+                      20     
+000C 7AC8             21     DLY0: MOV R2,#0C8H ;Loop1 bekleme degeri
+000E 7B04             22     DLY1: MOV R3,#004H ;Loop2 bekleme degeri
+0010 DBFE             23                     DJNZ R3,$ ; 1 azalt ve 0 olana kadar bekle
+0012 DAFA             24                     DJNZ R2,DLY1 ;
+0014 D9F6             25                     DJNZ R1,DLY0
+0016 22               26                     RET
+                      27     END
+A51 MACRO ASSEMBLER  DENEME4                                                              11/21/2023 17:20:39 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BLINK. . . . . . .  C ADDR   0005H   A   
+DELAY. . . . . . .  C ADDR   000BH   A   
+DLY0 . . . . . . .  C ADDR   000CH   A   
+DLY1 . . . . . . .  C ADDR   000EH   A   
+LED. . . . . . . .  B ADDR   00B0H.4 A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+PLLCON . . . . . .  N NUMB   00D7H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

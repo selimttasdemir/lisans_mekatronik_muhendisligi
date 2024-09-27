@@ -1,0 +1,157 @@
+A51 MACRO ASSEMBLER  MIKRO_PROJESI_V2                                                     12/27/2023 00:09:37 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\mikro_projesi_v2.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE mikro_projesi_v2.a51 SET(SMALL) DEBUG PRINT(.\Listings\mikro_projesi_v2
+                      .lst) OBJECT(.\Objects\mikro_projesi_v2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     $mod51 
+  00D7                 2     PLLCON  EQU 0XD7;
+  009D                 3     T3FD    EQU 0X9D;
+  009E                 4     T3CON   EQU 0X9E;
+                       5     
+----                   6     CSEG
+                       7     
+0000                   8     ORG 0000H
+                       9     
+0000                  10     GO: 
+                      11     ; ------------------------------
+                      12     ; CLOCK ve P0 PORTU AYARLARI     
+0000 75D700           13     MOV PLLCON, #00H   ; Sistem frekansini 16.78MHz olarak ayarla
+0003 7580FF           14     MOV P0, #0FFH      ; P0 portunu giris olarak tanimla
+  0080                15     ISIMAD EQU P0.0    ; P0 portunun 0. bitini temsil eder (P0.0)
+  0081                16     NUMARANO EQU P0.1  ; P0 portunun 1. bitini temsil eder (P0.1)
+                      17     ; ------------------------------
+                      18     
+                      19     ; SERI HABERLESME MODU VE BAUD RATE HIZI AYARLARI...
+0006 759E86           20     MOV T3CON,#86H         ;Baud rate hizini 9600 ayarla
+0009 759D2D           21     MOV T3FD ,#2DH         ;Baud rate hizini 9600 ayarla
+000C 759850           22     MOV SCON ,#50H         ;Seri haberlesme mod1 8 bit uart olarak ayarla
+                      23     
+                      24     
+1000                  25     ORG 1000H
+1000 0C0D5345         26     AD: DB 12, 13, 'SELIM TASDEMIR', 0
+1004 4C494D20                
+1008 54415344                
+100C 454D4952                
+1010 00                      
+2000                  27     ORG 2000H
+2000 0C0D3138         28     NUM: DB 12, 13, '1810225103    ', 0
+2004 31303232                
+2008 35313033                
+200C 20202020                
+2010 00                      
+                      29     
+2011                  30     KONTROL:
+                      31         ; P0.0 ve P0.1'e bagli butonlarin logic durumu kontrol edilir
+                      32         ; LOJIK 0 ise kontrol 2 ye git
+2011 1139             33         CALL PORT_READ
+2013 8011             34         JMP KONTROL22
+                      35     
+2015                  36     DEVAM:
+2015 1139             37         CALL PORT_READ
+2017 B80003           38         CJNE R0, #00H, SAYAC_1
+201A 30E026           39         JNB ACC.0, BUTON1
+                      40     
+201D                  41     SAYAC_1:
+201D 20E002           42         JB ACC.0, SAYAC_1_RESET
+2020 80EF             43         JMP KONTROL
+                      44     
+2022                  45     SAYAC_1_RESET:
+2022 7800             46         MOV R0, #00H
+2024 80EB             47         JMP KONTROL
+                      48     
+2026                  49     KONTROL22:
+A51 MACRO ASSEMBLER  MIKRO_PROJESI_V2                                                     12/27/2023 00:09:37 PAGE     2
+
+2026 1139             50         CALL PORT_READ
+2028 B90005           51         CJNE R1, #00H, SAYAC_2
+202B 30E122           52         JNB ACC.1, BUTON2
+202E 80E5             53         JMP DEVAM
+                      54     
+2030                  55     SAYAC_2:
+2030 20E102           56         JB ACC.1, SAYAC_2_RESET
+2033 80E0             57         JMP DEVAM
+                      58     
+2035                  59     SAYAC_2_RESET:
+2035 7900             60         MOV R1, #00H
+2037 80DC             61         JMP DEVAM
+                      62     
+2039                  63     PORT_READ:
+2039 E4               64         CLR A
+203A A280             65         MOV C, ISIMAD
+203C 92E0             66         MOV ACC.0, C
+203E A281             67         MOV C, NUMARANO
+2040 92E1             68         MOV ACC.1, C
+2042 32               69         RETI
+                      70     
+2043                  71     BUTON1:
+2043 E4               72         CLR A
+2044 901000           73         MOV DPTR, #AD
+                      74     
+2047 28               75         ADD A, R0
+2048 93               76         MOVC A, @A+DPTR
+2049 115D             77         CALL SERIALOKUMA
+204B 60D9             78         JZ KONTROL22
+204D 08               79         INC R0
+204E 80F3             80         JMP BUTON1
+                      81     
+2050                  82     BUTON2:
+2050 E4               83         CLR A
+2051 902000           84         MOV DPTR, #NUM
+                      85     
+2054 29               86         ADD A, R1
+2055 93               87         MOVC A, @A+DPTR
+2056 115D             88         CALL SERIALOKUMA
+2058 60BB             89         JZ DEVAM
+205A 09               90         INC R1
+205B 80F3             91         JMP BUTON2
+                      92     
+205D                  93     SERIALOKUMA:
+205D C299             94         CLR TI
+205F F599             95         MOV SBUF, A
+2061 3099FD           96         JNB TI, $
+2064 32               97         RETI
+                      98     
+                      99     END
+A51 MACRO ASSEMBLER  MIKRO_PROJESI_V2                                                     12/27/2023 00:09:37 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ACC. . . . . . . .  D ADDR   00E0H   A   
+AD . . . . . . . .  C ADDR   1000H   A   
+BUTON1 . . . . . .  C ADDR   2043H   A   
+BUTON2 . . . . . .  C ADDR   2050H   A   
+DEVAM. . . . . . .  C ADDR   2015H   A   
+GO . . . . . . . .  C ADDR   0000H   A   
+ISIMAD . . . . . .  B ADDR   0080H.0 A   
+KONTROL. . . . . .  C ADDR   2011H   A   
+KONTROL22. . . . .  C ADDR   2026H   A   
+NUM. . . . . . . .  C ADDR   2000H   A   
+NUMARANO . . . . .  B ADDR   0080H.1 A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+PLLCON . . . . . .  N NUMB   00D7H   A   
+PORT_READ. . . . .  C ADDR   2039H   A   
+SAYAC_1. . . . . .  C ADDR   201DH   A   
+SAYAC_1_RESET. . .  C ADDR   2022H   A   
+SAYAC_2. . . . . .  C ADDR   2030H   A   
+SAYAC_2_RESET. . .  C ADDR   2035H   A   
+SBUF . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . .  D ADDR   0098H   A   
+SERIALOKUMA. . . .  C ADDR   205DH   A   
+T3CON. . . . . . .  N NUMB   009EH   A   
+T3FD . . . . . . .  N NUMB   009DH   A   
+TI . . . . . . . .  B ADDR   0098H.1 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

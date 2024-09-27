@@ -1,0 +1,49 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    11/22/2023  14:36:02  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\deneme5.obj TO .\Objects\deneme5 PRINT (.\Listings\deneme5.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\deneme5.obj (DENEME5)
+
+
+LINK MAP OF MODULE:  .\Objects\deneme5 (DENEME5)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     000DH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\deneme5 (DENEME5)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DENEME5
+  C:000BH         SYMBOL        DUR
+  D:0080H         SYMBOL        P0
+  D:0090H         SYMBOL        P1
+  C:0003H         SYMBOL        READ
+  C:0000H         LINE#         7
+  C:0003H         LINE#         10
+  C:0005H         LINE#         11
+  C:0007H         LINE#         12
+  C:0009H         LINE#         13
+  C:000BH         LINE#         15
+  -------         ENDMOD        DENEME5
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 000DH BYTE ( 0%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=13
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

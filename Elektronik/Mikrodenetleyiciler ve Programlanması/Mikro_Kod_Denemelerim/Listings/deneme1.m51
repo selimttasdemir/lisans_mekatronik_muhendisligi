@@ -1,0 +1,57 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    11/18/2023  11:52:28  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\deneme1.obj TO .\Objects\deneme1 PRINT (.\Listings\deneme1.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\deneme1.obj (DENEME1)
+
+
+LINK MAP OF MODULE:  .\Objects\deneme1 (DENEME1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     011AH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\deneme1 (DENEME1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DENEME1
+  C:010EH         SYMBOL        DELAY
+  C:010FH         SYMBOL        DLY0
+  C:0111H         SYMBOL        DLY1
+  C:0100H         SYMBOL        DUR
+  D:00A0H         SYMBOL        P2
+  C:0100H         LINE#         8
+  C:0102H         LINE#         9
+  C:0105H         LINE#         10
+  C:0107H         LINE#         11
+  C:010AH         LINE#         12
+  C:010CH         LINE#         13
+  C:010EH         LINE#         16
+  C:010FH         LINE#         17
+  C:0111H         LINE#         18
+  C:0113H         LINE#         19
+  C:0115H         LINE#         20
+  C:0117H         LINE#         21
+  C:0119H         LINE#         22
+  -------         ENDMOD        DENEME1
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 001AH BYTE ( 1%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=282
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
