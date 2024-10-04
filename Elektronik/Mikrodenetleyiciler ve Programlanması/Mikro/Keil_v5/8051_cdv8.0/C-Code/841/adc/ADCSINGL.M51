@@ -1,0 +1,162 @@
+BL51 BANKED LINKER/LOCATER V5.02                                                        10/30/2003  10:56:24  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.02, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE ADCSINGL.obj TO ADCSINGL RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  ADCSINGL.obj (ADCSINGL)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (PRINTF)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CCASE)
+  C:\KEIL\C51\LIB\C51S.LIB (PUTCHAR)
+
+
+LINK MAP OF MODULE:  ADCSINGL (ADCSINGL)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0014H     UNIT         _DATA_GROUP_
+                    001CH     0004H                  *** GAP ***
+            BIT     0020H.0   0001H.1   UNIT         _BIT_GROUP_
+                    0021H.1   0000H.7                *** GAP ***
+            IDATA   0022H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+                    002AH     0009H                  *** GAP ***
+            CODE    0033H     0003H     ABSOLUTE     
+            CODE    0036H     035CH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    0392H     008EH     UNIT         ?C?LIB_CODE
+            CODE    0420H     0049H     UNIT         ?PR?ADC_INT?ADCSINGL
+            CODE    0469H     001CH     UNIT         ?PR?MAIN?ADCSINGL
+            CODE    0485H     000DH     UNIT         ?CO?ADCSINGL
+            CODE    0492H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   ADCSINGL (ADCSINGL)
+
+
+SEGMENT                           BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH     START    LENGTH
+------------------------------------------------------------------
+?PR?ADC_INT?ADCSINGL           -----    -----      -----    -----
+  +--> ?CO?ADCSINGL
+  +--> ?PR?PRINTF?PRINTF
+
+?PR?PRINTF?PRINTF              0020H.0  0001H.1    0008H    0014H
+BL51 BANKED LINKER/LOCATER V5.02                                                      10/30/2003  10:56:24  PAGE 2
+
+
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP                  -----    -----      -----    -----
+  +--> ?PR?MAIN?ADCSINGL
+
+
+
+SYMBOL TABLE OF MODULE:  ADCSINGL (ADCSINGL)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ADCSINGL
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00A8H.7       PUBLIC        EA
+  B:00D8H.4       PUBLIC        SCONV
+  B:00A8H.6       PUBLIC        EADC
+  D:009DH         PUBLIC        T3FD
+  C:0469H         PUBLIC        main
+  D:00DAH         PUBLIC        ADCDATAH
+  D:00D9H         PUBLIC        ADCDATAL
+  D:0098H         PUBLIC        SCON
+  B:00B0H.4       PUBLIC        LED
+  C:0420H         PUBLIC        adc_int
+  D:00EFH         PUBLIC        ADCCON1
+  D:00D8H         PUBLIC        ADCCON2
+  D:009EH         PUBLIC        T3CON
+  -------         PROC          ADC_INT
+  C:0420H         LINE#         22
+  C:043DH         LINE#         23
+  C:043FH         LINE#         24
+  C:044EH         LINE#         26
+  -------         ENDPROC       ADC_INT
+  -------         PROC          MAIN
+  -------         DO            
+  D:0006H         SYMBOL        CHAN
+  -------         ENDDO         
+  C:0469H         LINE#         28
+  C:0469H         LINE#         29
+  C:0469H         LINE#         30
+  C:046AH         LINE#         33
+  C:046DH         LINE#         34
+  C:0470H         LINE#         35
+  C:0473H         LINE#         39
+  C:0476H         LINE#         40
+  C:0478H         LINE#         41
+  C:047AH         LINE#         42
+  C:047CH         LINE#         46
+  C:047CH         LINE#         47
+  C:047CH         LINE#         48
+  C:047EH         LINE#         49
+  C:0481H         LINE#         50
+  C:0483H         LINE#         51
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        ADCSINGL
+BL51 BANKED LINKER/LOCATER V5.02                                                      10/30/2003  10:56:24  PAGE 3
+
+
+
+  -------         MODULE        PRINTF
+  D:0008H         PUBLIC        ?_PRINTF517?BYTE
+  D:0008H         PUBLIC        ?_PRINTF?BYTE
+  D:0008H         PUBLIC        ?_SPRINTF517?BYTE
+  D:0008H         PUBLIC        ?_SPRINTF?BYTE
+  C:0098H         PUBLIC        _PRINTF
+  C:0098H         PUBLIC        _PRINTF517
+  C:0092H         PUBLIC        _SPRINTF
+  C:0092H         PUBLIC        _SPRINTF517
+  -------         ENDMOD        PRINTF
+
+  -------         MODULE        ?C?CLDPTR
+  C:0392H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:03ABH         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:03D8H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:03EAH         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        ?C?CCASE
+  C:03FAH         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+  -------         MODULE        PUTCHAR
+  C:0003H         PUBLIC        _PUTCHAR
+  -------         ENDMOD        PUTCHAR
+
+Program Size: data=30.1 xdata=0 code=1173
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

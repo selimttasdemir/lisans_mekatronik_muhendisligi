@@ -1,0 +1,89 @@
+BL51 BANKED LINKER/LOCATER V5.02                                                        09/29/2003  17:26:06  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.02, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE DACsine.obj TO DACsine RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  DACsine.obj (DACSINE)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  DACsine (DACSINE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         _DATA_GROUP_
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0100H     UNIT         ?CO?DACSINE
+            CODE    0103H     004BH     UNIT         ?PR?MAIN?DACSINE
+            CODE    014EH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   DACsine (DACSINE)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?DACSINE
+
+?PR?MAIN?DACSINE               0008H    0002H
+  +--> ?CO?DACSINE
+
+
+
+SYMBOL TABLE OF MODULE:  DACsine (DACSINE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DACSINE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0103H         PUBLIC        main
+  D:00FDH         PUBLIC        DACCON
+  D:00FAH         PUBLIC        DAC0H
+  D:00F9H         PUBLIC        DAC0L
+  B:00B0H.4       PUBLIC        LED
+  -------         PROC          MAIN
+BL51 BANKED LINKER/LOCATER V5.02                                                      09/29/2003  17:26:06  PAGE 2
+
+
+  -------         DO            
+  C:0003H         SYMBOL        values
+  -------         DO            
+  D:0008H         SYMBOL        i
+  -------         ENDDO         
+  -------         ENDDO         
+  C:0103H         LINE#         20
+  C:0103H         LINE#         21
+  C:0103H         LINE#         37
+  C:0106H         LINE#         39
+  C:0109H         LINE#         40
+  C:010CH         LINE#         42
+  C:010CH         LINE#         43
+  C:010CH         LINE#         45
+  C:0111H         LINE#         46
+  C:0111H         LINE#         47
+  C:0126H         LINE#         48
+  C:0139H         LINE#         49
+  C:0147H         LINE#         50
+  C:014CH         LINE#         51
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        DACSINE
+
+Program Size: data=11.0 xdata=0 code=346
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

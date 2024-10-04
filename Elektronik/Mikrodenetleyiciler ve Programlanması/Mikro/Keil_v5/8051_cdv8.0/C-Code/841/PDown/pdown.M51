@@ -1,0 +1,118 @@
+BL51 BANKED LINKER/LOCATER V5.02                                                        09/29/2003  17:36:27  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.02, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE pdown.obj TO pdown RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  pdown.obj (PDOWN)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  pdown (PDOWN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         _DATA_GROUP_
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+            CODE    0006H     003DH     UNIT         ?PR?MAIN?PDOWN
+            CODE    0043H     0010H     UNIT         ?PR?_DELAY?PDOWN
+            CODE    0053H     0003H     ABSOLUTE     
+            CODE    0056H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0062H     0001H     UNIT         ?PR?INT0?PDOWN
+            CODE    0063H     0001H     UNIT         ?PR?TIC_INT?PDOWN
+
+
+
+OVERLAY MAP OF MODULE:   pdown (PDOWN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?PDOWN
+
+?PR?MAIN?PDOWN                 0008H    0002H
+  +--> ?PR?_DELAY?PDOWN
+
+
+
+SYMBOL TABLE OF MODULE:  pdown (PDOWN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        PDOWN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00A8H.7       PUBLIC        EA
+  C:0063H         PUBLIC        TIC_int
+BL51 BANKED LINKER/LOCATER V5.02                                                      09/29/2003  17:36:27  PAGE 2
+
+
+  D:00A1H         PUBLIC        TIMECON
+  C:0006H         PUBLIC        main
+  D:0087H         PUBLIC        PCON
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+  C:0043H         PUBLIC        _DELAY
+  D:00A6H         PUBLIC        INTVAL
+  B:00B0H.4       PUBLIC        LED
+  D:00A9H         PUBLIC        IEIP2
+  C:0062H         PUBLIC        int0
+  -------         PROC          INT0
+  C:0062H         LINE#         35
+  C:0062H         LINE#         37
+  -------         ENDPROC       INT0
+  -------         PROC          TIC_INT
+  C:0063H         LINE#         39
+  C:0063H         LINE#         41
+  -------         ENDPROC       TIC_INT
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        i
+  -------         ENDDO         
+  C:0006H         LINE#         43
+  C:0006H         LINE#         44
+  C:0006H         LINE#         46
+  C:0009H         LINE#         47
+  C:000BH         LINE#         48
+  C:000DH         LINE#         49
+  C:000FH         LINE#         51
+  C:000FH         LINE#         52
+  C:000FH         LINE#         53
+  C:0014H         LINE#         54
+  C:0014H         LINE#         55
+  C:001BH         LINE#         56
+  C:0020H         LINE#         57
+  C:0033H         LINE#         58
+  C:0036H         LINE#         59
+  C:0039H         LINE#         60
+  C:003BH         LINE#         61
+  C:003EH         LINE#         63
+  C:0041H         LINE#         64
+  -------         ENDPROC       MAIN
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        length
+  C:0043H         LINE#         67
+  C:0043H         LINE#         68
+  C:0043H         LINE#         69
+  C:004BH         LINE#         70
+  C:0052H         LINE#         71
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        PDOWN
+
+Program Size: data=11.0 xdata=0 code=100
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

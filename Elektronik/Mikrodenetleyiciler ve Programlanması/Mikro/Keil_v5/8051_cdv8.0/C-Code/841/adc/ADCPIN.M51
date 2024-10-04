@@ -1,0 +1,174 @@
+BL51 BANKED LINKER/LOCATER V5.02                                                        10/30/2003  10:56:07  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.02, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE ADCPIN.obj TO ADCPIN RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  ADCPIN.obj (ADCPIN)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (PRINTF)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CCASE)
+  C:\KEIL\C51\LIB\C51S.LIB (PUTCHAR)
+
+
+LINK MAP OF MODULE:  ADCPIN (ADCPIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0018H     UNIT         _DATA_GROUP_
+            BIT     0020H.0   0001H.1   UNIT         _BIT_GROUP_
+                    0021H.1   0000H.7                *** GAP ***
+            IDATA   0022H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     002BH     UNIT         ?PR?_DELAY?ADCPIN
+                    002EH     0005H                  *** GAP ***
+            CODE    0033H     0003H     ABSOLUTE     
+            CODE    0036H     035CH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    0392H     008EH     UNIT         ?C?LIB_CODE
+            CODE    0420H     0047H     UNIT         ?PR?ADC_INT?ADCPIN
+            CODE    0467H     0028H     UNIT         ?PR?MAIN?ADCPIN
+            CODE    048FH     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+            CODE    04B6H     000CH     UNIT         ?CO?ADCPIN
+            CODE    04C2H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   ADCPIN (ADCPIN)
+
+
+SEGMENT                           BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH     START    LENGTH
+------------------------------------------------------------------
+?PR?ADC_INT?ADCPIN             -----    -----      -----    -----
+  +--> ?CO?ADCPIN
+  +--> ?PR?PRINTF?PRINTF
+
+?PR?PRINTF?PRINTF              0020H.0  0001H.1    0008H    0014H
+BL51 BANKED LINKER/LOCATER V5.02                                                      10/30/2003  10:56:07  PAGE 2
+
+
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP                  -----    -----      -----    -----
+  +--> ?PR?MAIN?ADCPIN
+
+?PR?MAIN?ADCPIN                -----    -----      -----    -----
+  +--> ?PR?_DELAY?ADCPIN
+
+?PR?_DELAY?ADCPIN              -----    -----      001CH    0004H
+
+
+
+SYMBOL TABLE OF MODULE:  ADCPIN (ADCPIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ADCPIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00A8H.7       PUBLIC        EA
+  B:00A8H.6       PUBLIC        EADC
+  D:009DH         PUBLIC        T3FD
+  C:0467H         PUBLIC        main
+  D:00DAH         PUBLIC        ADCDATAH
+  D:00D9H         PUBLIC        ADCDATAL
+  D:0098H         PUBLIC        SCON
+  C:0003H         PUBLIC        _DELAY
+  B:00B0H.4       PUBLIC        LED
+  C:0420H         PUBLIC        adc_int
+  D:00EFH         PUBLIC        ADCCON1
+  D:00D8H         PUBLIC        ADCCON2
+  D:009EH         PUBLIC        T3CON
+  -------         PROC          ADC_INT
+  C:0420H         LINE#         22
+  C:043DH         LINE#         23
+  C:044CH         LINE#         25
+  -------         ENDPROC       ADC_INT
+  -------         PROC          MAIN
+  -------         DO            
+  D:0006H         SYMBOL        CHAN
+  -------         ENDDO         
+  C:0467H         LINE#         30
+  C:0467H         LINE#         31
+  C:0467H         LINE#         32
+  C:0468H         LINE#         35
+  C:046BH         LINE#         36
+  C:046EH         LINE#         37
+  C:0471H         LINE#         41
+  C:0474H         LINE#         42
+  C:0476H         LINE#         46
+  C:0478H         LINE#         47
+  C:047AH         LINE#         48
+  C:047DH         LINE#         52
+  C:047DH         LINE#         53
+  C:047DH         LINE#         54
+BL51 BANKED LINKER/LOCATER V5.02                                                      10/30/2003  10:56:07  PAGE 3
+
+
+  C:0482H         LINE#         55
+  C:048DH         LINE#         56
+  -------         ENDPROC       MAIN
+  -------         PROC          _DELAY
+  D:001CH         SYMBOL        length
+  C:0003H         LINE#         65
+  C:000BH         LINE#         66
+  C:000BH         LINE#         67
+  C:0017H         LINE#         68
+  C:002DH         LINE#         69
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        ADCPIN
+
+  -------         MODULE        PRINTF
+  D:0008H         PUBLIC        ?_PRINTF517?BYTE
+  D:0008H         PUBLIC        ?_PRINTF?BYTE
+  D:0008H         PUBLIC        ?_SPRINTF517?BYTE
+  D:0008H         PUBLIC        ?_SPRINTF?BYTE
+  C:0098H         PUBLIC        _PRINTF
+  C:0098H         PUBLIC        _PRINTF517
+  C:0092H         PUBLIC        _SPRINTF
+  C:0092H         PUBLIC        _SPRINTF517
+  -------         ENDMOD        PRINTF
+
+  -------         MODULE        ?C?CLDPTR
+  C:0392H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:03ABH         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:03D8H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:03EAH         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        ?C?CCASE
+  C:03FAH         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+  -------         MODULE        PUTCHAR
+  C:048FH         PUBLIC        _PUTCHAR
+  -------         ENDMOD        PUTCHAR
+
+Program Size: data=34.1 xdata=0 code=1225
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

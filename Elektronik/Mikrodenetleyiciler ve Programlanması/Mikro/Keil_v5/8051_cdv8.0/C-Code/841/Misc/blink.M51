@@ -1,0 +1,81 @@
+BL51 BANKED LINKER/LOCATER V5.02                                                        09/29/2003  17:27:09  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.02, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE BLINK.obj TO blink RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  BLINK.obj (BLINK)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  blink (BLINK)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0010H     UNIT         ?PR?_DELAY?BLINK
+            CODE    0013H     000CH     UNIT         ?PR?MAIN?BLINK
+            CODE    001FH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   blink (BLINK)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?BLINK
+
+?PR?MAIN?BLINK
+  +--> ?PR?_DELAY?BLINK
+
+
+
+SYMBOL TABLE OF MODULE:  blink (BLINK)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        BLINK
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00B0H         PUBLIC        P3
+  C:0013H         PUBLIC        main
+  C:0003H         PUBLIC        _delay
+  -------         PROC          MAIN
+  C:0013H         LINE#         17
+  C:0013H         LINE#         18
+  C:0013H         LINE#         22
+BL51 BANKED LINKER/LOCATER V5.02                                                      09/29/2003  17:27:09  PAGE 2
+
+
+  C:0013H         LINE#         23
+  C:0013H         LINE#         24
+  C:0016H         LINE#         25
+  C:001DH         LINE#         26
+  -------         ENDPROC       MAIN
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        length
+  C:0003H         LINE#         33
+  C:0003H         LINE#         34
+  C:0003H         LINE#         35
+  C:000BH         LINE#         36
+  C:0012H         LINE#         37
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        BLINK
+
+Program Size: data=9.0 xdata=0 code=43
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

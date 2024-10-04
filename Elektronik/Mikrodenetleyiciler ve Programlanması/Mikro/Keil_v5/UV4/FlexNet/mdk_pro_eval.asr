@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ActivationSpecificationRecord xmlns="FLEXnetPublisher_01EFFF13-92D7-469e-B7CC-35E13C2E8D4A">
+<Header>
+<VersionNumber>6</VersionNumber>
+<Id>1</Id>
+<PublisherId>10219520</PublisherId>
+</Header>
+<ConfigData>
+<ClientConfig>
+<Id>1</Id>
+<Revision>DefaultOne</Revision>
+<RevisionType>ASR</RevisionType>
+<Data>5B5A29D1E7A332FD0E7A69314517AEF0B6063BCAD7581B9BB462513E178AD4C87DFADCF0729E9267D6D5AA00152C3FE143C906BB3D27C53F53E63231154A4DE58C8A120F39CE5BC0253E5A72342C9DB018FC6ED81D31B1AE7A6535054A5BBA242B8937E0033231C3805E915AD59AEF509B468D4B8947B7A49E68AFB680D441D9B98FD8E169824886B75452C37473C626104CE5292AE8E4263EA9DF1D03B1E79AC901E79CED8341AC53B3380FA7E2E96900FEC9CD150FAD82699174C21049FBD6196A42D68D611800A2B10DA14A2CA6A57F030DDEC68DFAB963038BBA8E7B8132AD200AE48DD551C31F6F9D6BE50C37CE233C22315A209E444B5B6A36B7EF1A99</Data>
+</ClientConfig>
+</ConfigData>
+<DataDictionary>
+<Entries>
+<Entry>
+<Key>PUBLISHER_DEFINED_CRITERION</Key>
+<Value>LOCAL_ONCE</Value>
+</Entry>
+<Entry>
+<Key>PUBLISHER_TRIAL_ID</Key>
+<Value>1</Value>
+</Entry>
+<Entry>
+<Key>PUBLISHER_TRIAL_RESET</Key>
+<Value>1</Value>
+</Entry>
+<Entry>
+<Key>PUBLISHER_DEFINED_DURATION</Key>
+<Value>604800</Value>
+</Entry>
+<Entry>
+<Key>VIRTUALIZATION_POLICY</Key>
+<Value>PHYSICAL</Value>
+</Entry>
+</Entries>
+</DataDictionary>
+<FulfillmentRecord>
+<FulfillmentRecordHeader>
+<VersionNumber>1</VersionNumber>
+</FulfillmentRecordHeader>
+<FulfillmentRecordData>
+<FulfillmentId>FID-1400689593</FulfillmentId>
+<FulfillmentDictionary>
+<Entries>
+<Entry>
+<Key>fulfillmentType</Key>
+<Value>1</Value>
+</Entry>
+<Entry>
+<Key>expiry</Key>
+<Value>30-sep-2017</Value>
+</Entry>
+<Entry>
+<Key>origExpiry</Key>
+<Value>30-sep-2017</Value>
+</Entry>
+<Entry>
+<Key>serverHostID</Key>
+<Value>FLEXID=9-a6300155</Value>
+</Entry>
+<Entry>
+<Key>servOrLocal</Key>
+<Value>2</Value>
+</Entry>
+<Entry>
+<Key>fulfillmentIdChain</Key>
+<Value>456:123</Value>
+</Entry>
+<Entry>
+<Key>ProductId</Key>
+<Value>mdk_pro_eval</Value>
+</Entry>
+<Entry>
+<Key>EntitlementId</Key>
+<Value>mdk-pro-eval</Value>
+</Entry>
+<Entry>
+<Key>availAct</Key>
+<Value>1</Value>
+</Entry>
+<Entry>
+<Key>features</Key>
+<Value>
+INCREMENT mdk_pro_eval_uvision armlmd 5.0201709 30-sep-2017 1 \
+    ISSUER="ARM Limited" NOTICE="For support see \
+    http://silver.arm.com/support" SN=MDK-PRO_TS_EVAL SIGN="0736 \
+    940A 94AC 3229 42D2 28E9 9F61 5AC1 802A F1C5 F3E9 DA0B 50A3 \
+    1560 4DE2 0B15 3173 FF43 0602 DAA7 8FE3 2B37 B913 7045 2647 \
+    2D12 BD34 47B7 6635 0DEC" SIGN2="00EF 327E D51F 46F5 699C FB48 \
+    B00F 98F6 C9B9 D2FB D388 E5FB 9A20 E76C A097 1065 D056 20AE \
+    15ED F8F4 227D 9908 F86E 12AB 19E7 AD33 49C2 6920 4719 A5D4"
+INCREMENT mdk_pro_eval_armcompiler armlmd 5.0201709 30-sep-2017 1 \
+    ISSUER="ARM Limited" NOTICE="For support see \
+    http://silver.arm.com/support" SN=MDK-PRO_TS_EVAL SIGN="1E5B \
+    C895 E7B3 18C2 5C09 7205 A311 FEE8 FCB4 709D 934B 9BCA ABA7 \
+    7AD1 1807 0647 1C31 81C6 EFED 821C 82BC 16FD 125F B9CC C83C \
+    8A53 75C2 5B19 955B 904E" SIGN2="0CCB 2D8F 6CAD 8C25 327F 2346 \
+    09A0 893C 957A BB72 8BCA 6EB1 49F8 1A9A AFF0 1D51 34C9 5B85 \
+    F92F 46DA 3B3E 214C 1E15 16B6 FAEF B5E4 26BC A6DD F6BE 1F51"
+</Value>
+</Entry>
+</Entries>
+</FulfillmentDictionary>
+</FulfillmentRecordData>
+</FulfillmentRecord>
+<Signature>0F857212186252D83403C816C2F8F3758966CB5C3B5A7ED76F21B2F980AC050B1E1D257E3F74D1FCA66F435D64668AD8A87C94AD69DDA74F39C72F7A</Signature>
+</ActivationSpecificationRecord>

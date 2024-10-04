@@ -1,0 +1,282 @@
+BL51 BANKED LINKER/LOCATER V5.02                                                        09/30/2003  11:22:37  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.02, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE ticrtc.obj TO ticrtc RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  ticrtc.obj (TICRTC)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (PRINTF)
+  C:\KEIL\C51\LIB\C51S.LIB (SCANF)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?ISTPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?LNEG)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?LSTPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDIDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?PILDIDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CCASE)
+  C:\KEIL\C51\LIB\C51S.LIB (PUTCHAR)
+  C:\KEIL\C51\LIB\C51S.LIB (GETCHAR)
+  C:\KEIL\C51\LIB\C51S.LIB (UNGETC)
+  C:\KEIL\C51\LIB\C51S.LIB (ISSPACE)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?LSTIDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?LSTXDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?LSTPDATA)
+  C:\KEIL\C51\LIB\C51S.LIB (_GETKEY)
+
+
+LINK MAP OF MODULE:  ticrtc (TICRTC)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         ?DT?GETCHAR
+                    0009H     0017H                  *** GAP ***
+            BIT     0020H.0   0001H.1   UNIT         _BIT_GROUP_
+            BIT     0021H.1   0000H.1   UNIT         ?BI?GETCHAR
+                    0021H.2   0000H.6                *** GAP ***
+            DATA    0022H     0021H     UNIT         _DATA_GROUP_
+            IDATA   0043H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+            CODE    002AH     0013H     UNIT         ?PR?_ISSPACE?ISSPACE
+            CODE    003DH     0011H     UNIT         ?PR?GETCHAR?GETCHAR
+            CODE    004EH     0005H     UNIT         ?PR?GETCHAR?UNGETCHAR
+            CODE    0053H     0003H     ABSOLUTE     
+            CODE    0056H     035CH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    03B2H     0317H     UNIT         ?PR?SCANF?SCANF
+            CODE    06C9H     0112H     UNIT         ?C?LIB_CODE
+BL51 BANKED LINKER/LOCATER V5.02                                                      09/30/2003  11:22:37  PAGE 2
+
+
+            CODE    07DBH     00A2H     UNIT         ?CO?TICRTC
+            CODE    087DH     009EH     UNIT         ?PR?MAIN?TICRTC
+            CODE    091BH     0010H     UNIT         ?PR?_DELAY?TICRTC
+            CODE    092BH     000DH     UNIT         ?PR?TIC_INT?TICRTC
+            CODE    0938H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0944H     000AH     UNIT         ?PR?_GETKEY?_GETKEY
+
+
+
+OVERLAY MAP OF MODULE:   ticrtc (TICRTC)
+
+
+SEGMENT                           BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH     START    LENGTH
+------------------------------------------------------------------
+?C_C51STARTUP                  -----    -----      -----    -----
+  +--> ?PR?MAIN?TICRTC
+
+?PR?MAIN?TICRTC                -----    -----      0022H    0007H
+  +--> ?CO?TICRTC
+  +--> ?PR?PRINTF?PRINTF
+  +--> ?PR?SCANF?SCANF
+  +--> ?PR?_DELAY?TICRTC
+
+?PR?PRINTF?PRINTF              0020H.0  0001H.1    0029H    0014H
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+?PR?SCANF?SCANF                0020H.0  0000H.6    0029H    001AH
+  +--> ?PR?GETCHAR?UNGETCHAR
+  +--> ?PR?_ISSPACE?ISSPACE
+  +--> ?PR?GETCHAR?GETCHAR
+
+?PR?GETCHAR?GETCHAR            -----    -----      -----    -----
+  +--> ?PR?_GETKEY?_GETKEY
+  +--> ?PR?PUTCHAR?PUTCHAR
+
+
+
+SYMBOL TABLE OF MODULE:  ticrtc (TICRTC)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        TICRTC
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00A8H.7       PUBLIC        EA
+  C:092BH         PUBLIC        TIC_int
+  D:00A1H         PUBLIC        TIMECON
+  D:009DH         PUBLIC        T3FD
+  C:087DH         PUBLIC        main
+  D:0087H         PUBLIC        PCON
+  D:0098H         PUBLIC        SCON
+  D:00A5H         PUBLIC        HOUR
+  C:091BH         PUBLIC        _DELAY
+  D:00A6H         PUBLIC        INTVAL
+  B:00B0H.4       PUBLIC        LED
+  D:00A9H         PUBLIC        IEIP2
+BL51 BANKED LINKER/LOCATER V5.02                                                      09/30/2003  11:22:37  PAGE 3
+
+
+  D:00A3H         PUBLIC        SEC
+  D:00A4H         PUBLIC        MIN
+  D:009EH         PUBLIC        T3CON
+  -------         PROC          TIC_INT
+  C:092BH         LINE#         22
+  C:092DH         LINE#         24
+  C:0932H         LINE#         25
+  C:0935H         LINE#         27
+  -------         ENDPROC       TIC_INT
+  -------         PROC          MAIN
+  -------         DO            
+  D:0022H         SYMBOL        temp_hour
+  D:0024H         SYMBOL        temp_min
+  D:0026H         SYMBOL        temp_sec
+  D:0028H         SYMBOL        answer
+  -------         ENDDO         
+  C:087DH         LINE#         29
+  C:087DH         LINE#         30
+  C:087DH         LINE#         34
+  C:0880H         LINE#         35
+  C:0883H         LINE#         36
+  C:0886H         LINE#         39
+  C:0898H         LINE#         40
+  C:08A1H         LINE#         41
+  C:08B3H         LINE#         43
+  C:08B9H         LINE#         44
+  C:08B9H         LINE#         45
+  C:08C2H         LINE#         46
+  C:08E6H         LINE#         48
+  C:08E9H         LINE#         49
+  C:08ECH         LINE#         50
+  C:08EFH         LINE#         51
+  C:08F2H         LINE#         52
+  C:08F2H         LINE#         54
+  C:08F5H         LINE#         55
+  C:08F8H         LINE#         58
+  C:08FBH         LINE#         59
+  C:08FDH         LINE#         61
+  C:08FDH         LINE#         62
+  C:08FDH         LINE#         63
+  C:090FH         LINE#         64
+  C:0916H         LINE#         65
+  C:0919H         LINE#         66
+  -------         ENDPROC       MAIN
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        length
+  C:091BH         LINE#         69
+  C:091BH         LINE#         70
+  C:091BH         LINE#         71
+  C:0923H         LINE#         72
+  C:092AH         LINE#         73
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        TICRTC
+
+  -------         MODULE        PRINTF
+  D:0029H         PUBLIC        ?_PRINTF517?BYTE
+  D:0029H         PUBLIC        ?_PRINTF?BYTE
+BL51 BANKED LINKER/LOCATER V5.02                                                      09/30/2003  11:22:37  PAGE 4
+
+
+  D:0029H         PUBLIC        ?_SPRINTF517?BYTE
+  D:0029H         PUBLIC        ?_SPRINTF?BYTE
+  C:00B8H         PUBLIC        _PRINTF
+  C:00B8H         PUBLIC        _PRINTF517
+  C:00B2H         PUBLIC        _SPRINTF
+  C:00B2H         PUBLIC        _SPRINTF517
+  -------         ENDMOD        PRINTF
+
+  -------         MODULE        SCANF
+  D:0029H         PUBLIC        ?_SCANF517?BYTE
+  D:0029H         PUBLIC        ?_SCANF?BYTE
+  D:0029H         PUBLIC        ?_SSCANF517?BYTE
+  D:0029H         PUBLIC        ?_SSCANF?BYTE
+  C:0434H         PUBLIC        _SCANF
+  C:0434H         PUBLIC        _SCANF517
+  C:0430H         PUBLIC        _SSCANF
+  C:0430H         PUBLIC        _SSCANF517
+  -------         ENDMOD        SCANF
+
+  -------         MODULE        ?C?CLDPTR
+  C:06C9H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:06E2H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:070FH         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?ISTPTR
+  C:0721H         PUBLIC        ?C?ISTPTR
+  -------         ENDMOD        ?C?ISTPTR
+
+  -------         MODULE        ?C?LNEG
+  C:0740H         PUBLIC        ?C?LNEG
+  -------         ENDMOD        ?C?LNEG
+
+  -------         MODULE        ?C?LSTPTR
+  C:074EH         PUBLIC        ?C?LSTPTR
+  -------         ENDMOD        ?C?LSTPTR
+
+  -------         MODULE        ?C?PLDIDATA
+  C:0768H         PUBLIC        ?C?PLDIDATA
+  -------         ENDMOD        ?C?PLDIDATA
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:0771H         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        ?C?PILDIDATA
+  C:0781H         PUBLIC        ?C?PILDIDATA
+  -------         ENDMOD        ?C?PILDIDATA
+
+  -------         MODULE        ?C?CCASE
+  C:0791H         PUBLIC        ?C?CCASE
+BL51 BANKED LINKER/LOCATER V5.02                                                      09/30/2003  11:22:37  PAGE 5
+
+
+  -------         ENDMOD        ?C?CCASE
+
+  -------         MODULE        PUTCHAR
+  C:0003H         PUBLIC        _PUTCHAR
+  -------         ENDMOD        PUTCHAR
+
+  -------         MODULE        GETCHAR
+  B:0021H.1       PUBLIC        ?C?CHARLOADED
+  D:0008H         PUBLIC        ?_UNGETCHAR?BYTE
+  C:003DH         PUBLIC        GETCHAR
+  -------         ENDMOD        GETCHAR
+
+  -------         MODULE        UNGETC
+  C:004EH         PUBLIC        _UNGETCHAR
+  -------         ENDMOD        UNGETC
+
+  -------         MODULE        ISSPACE
+  C:002AH         PUBLIC        _isspace
+  -------         ENDMOD        ISSPACE
+
+  -------         MODULE        ?C?LSTIDATA
+  C:07B7H         PUBLIC        ?C?LSTIDATA
+  -------         ENDMOD        ?C?LSTIDATA
+
+  -------         MODULE        ?C?LSTXDATA
+  C:07C3H         PUBLIC        ?C?LSTXDATA
+  -------         ENDMOD        ?C?LSTXDATA
+
+  -------         MODULE        ?C?LSTPDATA
+  C:07CFH         PUBLIC        ?C?LSTPDATA
+  -------         ENDMOD        ?C?LSTPDATA
+
+  -------         MODULE        _GETKEY
+  C:0944H         PUBLIC        _GETKEY
+  -------         ENDMOD        _GETKEY
+
+Program Size: data=44.2 xdata=0 code=2382
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
