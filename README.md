@@ -73,8 +73,8 @@
 - Araştırma ve Sunum Teknikleri
 
 ##
-Aynı bölümde okuyan ya da kendini bu alanda geliştirmek isteyenler için üniversite süreci boyunca derslerde yaptığım ders notlarını, ödevleri, projeleri ve sınavları bulabilirsiniz. Gelecek senelerde bu dersleri alacak kişiler için yol göstermesini umuyorum. Lütfen her bir ödev, proje ve sınavın bireysel ve kendi çabanız ile yapılması gerektiğini unutmayın. 
+Aynı bölümde okuyan ya da kendini bu alanda geliştirmek isteyenler için üniversite süreci boyunca derslerde yaptığım ders notlarını, ödevleri, projeleri ve sınavları bulabilirsiniz. Gelecek senelerde bu dersleri alacak kişiler için yol göstermesini umuyorum. **Lütfen her bir ödev, proje ve sınavın bireysel ve kendi çabanız ile yapılması gerektiğini unutmayın.** 
 <br>
-Bölüm hakkında bilgi almak için Karabük Üniversitesi Mühendislik Fakültesi Mekatronik Mühendisliği [Resmi Sayfası](https://muh.karabuk.edu.tr/mekatronik) ile [Program Bilgileri](https://obs.karabuk.edu.tr/oibs/bologna/index.aspx?lang=tr&curOp=showPac&curUnit=0200&curSunit=305) kısımlarına linkten ulaşarak detaylı bilgi alabilirsiniz. Bölüm Başkanı [Prof. Dr. İbrahim Çayıroğlu](www.ibrahimcayiroglu.com)
+Bölüm hakkında bilgi almak için Karabük Üniversitesi Mühendislik Fakültesi Mekatronik Mühendisliği [Resmi Sayfası](https://muh.karabuk.edu.tr/mekatronik) ile [Program Bilgileri](https://obs.karabuk.edu.tr/oibs/bologna/index.aspx?lang=tr&curOp=showPac&curUnit=0200&curSunit=305) kısımlarına linkten ulaşarak detaylı bilgi alabilirsiniz. Bölüm Başkanı [Prof. Dr. İbrahim Çayıroğlu](http://www.ibrahimcayiroglu.com)
 
 ###### Bu arşivi hazırlayan [Cengizhan TOPÇU](https://github.com/cengizhantopcu53)'ya teşekkür ederim. Ben üzerine birkaç ekleme ve düzenleme yaparak tekrar sunuyorum. Güncellemeler ve eklemeler yapılacaktır. Eksik ve yanlış gördüğünüz yerleri düzeltmek için lütfen iletişime geçmekten çekinmeyin.
